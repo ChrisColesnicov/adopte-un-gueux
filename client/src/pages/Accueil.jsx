@@ -1,8 +1,6 @@
-import profilesList from "../services/profilsData";
 import Carousel from "../components/Carousel";
 
 export default function Accueil() {
-  console.info(profilesList);
   return (
     <section className="homepage">
       <Carousel />
