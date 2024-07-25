@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, Link } from "react-router-dom";
 
 import Papa from "papaparse";
 
@@ -35,14 +35,16 @@ export default function Carousel() {
           style={{ backgroundImage: `url(${profil.image})` }}
         >
           <div className="carouselDescription">
-            <h2 className="titleDescription">
-              {profil.Prénom} {profil.Nom}, {profil.Age} ans
-            </h2>
-            <div className="titrelieu">
-              <p>{profil.Titre}</p>
-              <p>{profil.Localisation}</p>
-            </div>
-            <p className="userDescription">{profil.Description}</p>
+            <Link to={`/${profil.ID}`} className="linkDesc">
+              <h2 className="titleDescription">
+                {profil.Prénom} {profil.Nom}, {profil.Age} ans
+              </h2>
+              <div className="titrelieu">
+                <p>{profil.Titre}</p>
+                <p>{profil.Localisation}</p>
+              </div>
+              <p className="userDescription">{profil.Description}</p>
+            </Link>
           </div>
         </SplideSlide>
       ))}

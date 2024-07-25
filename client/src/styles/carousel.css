@@ -9,6 +9,14 @@
   height: 70vh;
   width: 100%;
 }
+.linkDesc {
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .splide__track {
   height: 100%;
   width: 100%;
@@ -27,13 +35,11 @@
 }
 .carouselDescription {
   height: 30%;
+  width: 100%;
   border-radius: 36px;
   background-color: rgba(82, 82, 82, 0.7);
   backdrop-filter: blur(5px);
   padding: 0.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   font-family: var(--font-p);
 }
 .titleDescription {
