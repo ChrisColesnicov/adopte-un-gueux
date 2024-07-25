@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabriela&display=swap");
+
+:root {
+  --primary-color: #e4e4ce;
+  --font-p: "Gabriela", serif;
+}
+
+.descriptContainer {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  /* border: 1px solid #fa7d7c; */
+  padding: 0.5rem;
+}
+.btnBack {
+  background: none;
+  border: none;
+  width: fit-content;
+}
+.descript > button > img {
+  height: 58px;
+}
+.descript {
+  height: 100%;
+}
+.headBtnImg {
+  display: flex;
+  height: 20vh;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0 5vh 0;
+  padding: 1rem;
+  border-radius: 36px;
+  background-color: #2c2c2c;
+  border: 2px solid #fb8b9c;
+}
+.headBtnImg > img {
+  height: 100%;
+  border-radius: 50px;
+}
+.btnDescript {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.btnDescript > img {
+  height: 38px;
+}
+
+.mainDescript {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  text-align: center;
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  background-color: #2c2c2c;
+  border-radius: 36px;
+  border: 2px solid #fb8b9c;
+}
+.mainDescript > p {
+  font-family: var(--font-p);
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
