@@ -1,7 +1,4 @@
-import profilesList from "../services/profilsData"
-
 export default function Chat () {
-    console.info(profilesList)
     return (
         <>
             <div className="chat-list">
