@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--beige);
+}
+
+.footer-img {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--pink);
+  margin: 1rem;
+  border-radius: 10px;
+}
