@@ -4,6 +4,7 @@ import "../styles/footer.css";
 export default function Footer() {
   return (
     <section className="footer">
+      <div className="separator">{}</div>
       <div className="footer-img">
         <Link to="/onboard">
           <img
@@ -11,11 +12,17 @@ export default function Footer() {
             alt="Go to Onboarding"
           />
         </Link>
-        <img src="../src/assets/images/chat.svg" alt="Go to chat" />
-        <img
-          src="../src/assets/images/cart.svg"
-          alt="Your cart - Favorite people"
-        />
+
+        <Link to="/chat">
+          <img src="../src/assets/images/chat.png" alt="Go to chat" />
+        </Link>
+        <Link to="/cart">
+          <img
+            src="../src/assets/images/cart.png"
+            alt="Your cart - Favorite people"
+          />
+        </Link>
+
         <img src="../src/assets/images/parameters.svg" alt="Go to parameters" />
       </div>
     </section>

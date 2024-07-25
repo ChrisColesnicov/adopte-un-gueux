@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 
 import "./styles/App.css";
 import "./styles/accueil.css";
+import "./styles/cart.css"
 
 function App() {
   return (

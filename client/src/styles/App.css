@@ -12,6 +12,7 @@
   --logo-font: "MedievalSharp", sans-serif;
   --main-font: "Gabriela", sans-serif;
 }
-body {
+#root {
   background-color: var(--beige);
+  padding: 1rem 0.5rem;
 }

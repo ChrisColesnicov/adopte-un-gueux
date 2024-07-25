@@ -3,15 +3,37 @@ import "../styles/onboarding.css";
 
 export default function Onboarding() {
   const [check, setCheck] = useState(false);
+  const [title, setTitle] = useState("");
+  const handleSubmit = (event) => event.preventDefault();
+  const MAX_LENGTH = 30;
+  const handleChange = (event) => {
+    if (event.target.value.length <= MAX_LENGTH) {
+      setTitle(event.target.value);
+    }
+  };
+  const maximumReached = title.length >= MAX_LENGTH;
+  const numRemaining = MAX_LENGTH - title.length;
+  const plurial = () =>
+    title.length > 28 ? "caractère restant" : "caractères restants";
+  const handleCheckChange = () => setCheck(!check);
 
-  const handleChange = () => setCheck(!check);
-  console.info(`la valeur change"${handleChange}`);
   return (
     <section className="onboarding">
       <h3>Par quel noms on vous connaît en ce pays ?</h3>
-      <form>
-        <input type="text" className="name" placeholder="Noms" />
+      <form onSubmit={handleSubmit}>
+        <input
+          className={maximumReached ? "length-maximum-reached" : "length-ok"}
+          id="title"
+          type="text"
+          value={title}
+          onChange={handleChange}
+          placeholder="Noms"
+        />
+        <small className="remaining-characters">
+          {numRemaining} {plurial()}
+        </small>
       </form>
+      <h3>Bienvenue à toi {title}</h3>
       <h3>De quel genre êtes-vous ?</h3>
       <div className="gender">
         <div className="gender-1">
@@ -20,7 +42,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Homme"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Homme
           </label>
@@ -31,7 +53,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Homme"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Femme
           </label>
@@ -45,7 +67,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Homme"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Homme
           </label>
@@ -54,7 +76,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Homme"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Femme
           </label>
@@ -65,7 +87,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name=" SCousin/Cousine"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Cousin/Cousine
           </label>
@@ -74,7 +96,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Chèvre"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Chèvre
           </label>
@@ -88,7 +110,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Mariage forcé"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Mariage forcé
           </label>
@@ -97,7 +119,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Familiale"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Familiale
           </label>
@@ -108,7 +130,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Jout d'une nuit"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Jout d'une nuit
           </label>
@@ -117,7 +139,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Libertine"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Libertine
           </label>
@@ -131,7 +153,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Noblesse"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Noblesse
           </label>
@@ -140,7 +162,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Bourgeoise"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Clergé
           </label>
@@ -149,7 +171,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Marginaux"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Marginaux
           </label>
@@ -160,7 +182,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Clergé"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Bourgoise
           </label>
@@ -169,7 +191,7 @@ export default function Onboarding() {
               className="checkbox"
               type="checkbox"
               name="Paysannerie"
-              onChange={handleChange}
+              onChange={handleCheckChange}
             />{" "}
             Paysannerie
           </label>
