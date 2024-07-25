@@ -15,16 +15,17 @@
 .cart-item-profile {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 0 1rem;
   margin: 0 2rem;
+  padding-right: 1rem;
   background-color: var(--yellow);
   border-radius: 8px;
 }
 
 .cart-item-name {
-  max-width: 10ch;
+  display: flex;
+  flex-direction: column;
   font-weight: 500;
 }
 
