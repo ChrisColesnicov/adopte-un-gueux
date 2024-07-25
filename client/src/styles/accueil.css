@@ -5,7 +5,7 @@
   padding: 1rem 0;
 }
 
-.swipe-buttons > button {
+.buy-button {
   border-radius: 50%;
   height: 52px;
   width: 52px;
@@ -13,14 +13,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.buy-button {
   background-color: #fe7489;
   opacity: 0.8;
 }
 
 .like-button {
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #77dd77;
   opacity: 0.8;
 }
