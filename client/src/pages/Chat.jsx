@@ -1,5 +1,8 @@
 /* eslint-disable react/button-has-type */
 import { useState } from "react";
+import { useLoaderData } from "react-router-dom";
+import Papa from "papaparse";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
 
 import chatData from "../services/chatData";
 
@@ -10,6 +13,16 @@ export default function Chat() {
   const [input, setInput] = useState({});
   const [messages, setMessages] = useState([]);
 
+  const dataFromLoader = useLoaderData();
+
+  const parse = () =>
+    Papa.parse(dataFromLoader.data, {
+      header: true,
+      complete: (result) => result,
+    });
+  const { data } = parse();
+  console.info(data);
+
   const getInputText = (event) => {
     setInput(event.target.value);
   };
@@ -17,7 +30,25 @@ export default function Chat() {
   return (
     <>
       <section className="chat-caroussel">
-        <div className="active-chat"> Caroussel de chat actif</div>
+        <div className="active-chat">
+          <Splide
+            className="carrousel-content"
+            options={{
+              pagination: false,
+              perPage: 3,
+              snap: true,
+              speed: 500,
+              type: "loop",
+              arrows: false,
+            }}
+          >
+            {data?.map((picture) => (
+              <SplideSlide key={picture.ID} className="chat-carrousel">
+                <img className="chat-profil" src={picture.image} alt="profil" />
+              </SplideSlide>
+            ))}
+          </Splide>
+        </div>
       </section>
       <div className="separator" />
       <section className="chat-window">
