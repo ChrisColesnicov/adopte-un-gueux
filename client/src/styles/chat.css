@@ -1,0 +1,58 @@
+body {
+  height: 100svw;
+}
+
+.chat-caroussel {
+  width: 100%;
+  height: 10rem;
+  border: 1px red solid;
+}
+
+.chat-window {
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  width: 100%;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.chat {
+  padding: 1rem;
+  scrollbar-width: auto;
+}
+
+.input-area {
+  width: 100%;
+  display: flex;
+  align-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.chat-input {
+  border-style: none;
+  background-color: none;
+}
+
+.send {
+  border-style: none;
+  background-color: transparent;
+}
+
+.chat {
+  width: 100%;
+}
+
+.message-text:nth-child(2n) {
+  background-color: #fd7d79;
+}
+
+.message-text:nth-child(2n + 1) {
+  background-color: #db7f91c2;
+  display: flex;
+  justify-content: flex-end;
+}

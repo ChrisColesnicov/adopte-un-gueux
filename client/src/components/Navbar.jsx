@@ -15,7 +15,7 @@ export default function Navbar() {
           alt="Logo - Adopte Un Gueux"
         />
       </nav>
-      <div className="separator">{}</div>
+      <div className="separator" />
     </section>
   );
 }
