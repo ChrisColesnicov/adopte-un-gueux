@@ -10,6 +10,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     loader: getProfil,
+    children: [
+      {
+        path: "/",
+        element: <Accueil />,
+      },
+    ],
   },
 ]);
 
