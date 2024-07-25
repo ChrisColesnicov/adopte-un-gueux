@@ -1,3 +1,4 @@
+import CartItem from "../components/CartItem";
 import profilesList from "../services/profilsData";
 
 export default function Cart() {
@@ -5,12 +6,12 @@ export default function Cart() {
 
   return (
     <section>
-      <h2>Panier de gueux</h2>
-      {cart.map((profile) => (
-        <div key={profile.id}>
-          <p>{profile.prenom}<span> {profile.nom}</span></p>
-        </div>
-      ))}
+      <h2 className="cart-title">Panier de gueux</h2>
+      <div className="cart-item-container">
+        {cart.map((profile) => (
+          <CartItem key={profile.id} profile={profile} />
+        ))}
+      </div>
     </section>
   );
 }
