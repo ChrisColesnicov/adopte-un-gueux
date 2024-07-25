@@ -1,10 +1,21 @@
+import "../styles/navbar.css";
+
 export default function Navbar() {
   return (
-    <nav>
-      <h2>Navbar</h2>
-      <p>Oui</p>
-      <p>Non</p>
-      <p>Avec du café</p>
-    </nav>
+    <section className="navbar">
+      <nav className="title-logo">
+        <h2 className="title">
+          <span className="title-adopte">Adopte</span>
+          <span className="title-un">Un</span>
+          <span className="title-gueux">Gueux</span>
+        </h2>
+        <img
+          src="../src/assets/images/logo.svg"
+          className="logo"
+          alt="Logo - Adopte Un Gueux"
+        />
+      </nav>
+      <div className="separator">{}</div>
+    </section>
   );
 }
