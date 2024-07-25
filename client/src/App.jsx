@@ -1,13 +1,17 @@
-import "./App.css";
+import { Outlet } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+import "./styles/App.css";
+import "./styles/accueil.css";
 
 function App() {
   return (
     <>
       <Navbar />
-      <main className="container">
-        <h1>Bonjour les gueux</h1>
+      <main>
+        <Outlet />
       </main>
       <Footer />
     </>

@@ -14,7 +14,7 @@ const profilesList = [
     interets: "Joutes verbales, Chasse aux dragons, Tournois",
     description:
       "À la recherche d'une dame à sauver (ou d'une pinte à partager).",
-    photos: ["thibaut1.jpg", "thibaut2.jpg"],
+    photos: "https://picsum.photos/200/300",
   },
   {
     id: 2,
@@ -32,7 +32,7 @@ const profilesList = [
       "Fabrication de potions, Récolte d'herbes magiques, Enchantements",
     description:
       "Herboriste à la recherche d'une âme sœur pour concocter des potions d'amour.",
-    photos: ["morgane1.jpg", "morgane2.jpg"],
+    photos: "https://picsum.photos/200/300",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const profilesList = [
     interets: "Forge d'armes, Expéditions vikings, Festins",
     description:
       "Forgeron robuste cherchant à forger des liens aussi forts que l'acier.",
-    photos: ["bjorn1.jpg", "bjorn2.jpg"],
+    photos: "https://picsum.photos/200/300",
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const profilesList = [
     interets: "Chant des arbres, Soins aux animaux, Protection de la forêt",
     description:
       "Élue de la forêt, cherche compagnon pour veiller sur la nature.",
-    photos: ["elowen1.jpg", "elowen2.jpg"],
+    photos: "https://picsum.photos/200/300",
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ const profilesList = [
     interets: "Musique, Contes, Banquets",
     description:
       "Chanteur de ballades à la recherche d'une muse pour de nouvelles chansons.",
-    photos: ["robin1.jpg", "robin2.jpg"],
+    photos: "https://picsum.photos/200/300",
   },
 ];
 
