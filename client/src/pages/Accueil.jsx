@@ -1,8 +1,11 @@
+import profilesList from "../services/profilsData";
+
 export default function Accueil(){
+    console.info(profilesList)
     return (
         <>
         <div className="swipe-container">
-            <img src="https://i.pinimg.com/736x/ef/ca/e6/efcae6eae2b18f8b818ee66fe4abeb7f.jpg" alt="profile pic" />
+            <h2>Carrousel</h2>
         </div>
         <div className="swipe-description">
             <p>Doggo <span>, 0.2 ans</span> </p>
