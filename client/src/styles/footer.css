@@ -5,7 +5,7 @@
 .footer-img {
   display: flex;
   justify-content: space-evenly;
-  background-color: var(--pink);
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
   margin: 1rem;
   border-radius: 10px;
 }

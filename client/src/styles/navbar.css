@@ -6,14 +6,20 @@
   flex-direction: column-reverse;
   align-items: center;
 }
-
-.siteName {
-  color: var(--pink);
-  font-size: var(--logo-font);
+.title {
+  font-family: "MedievalSharp";
 }
-
+.title-adopte {
+  color: #ffa38d;
+}
+.title-un {
+  color: #fe688b;
+}
+.title-gueux {
+  color: #fd4845;
+}
 .separator {
   background-color: #2c2c2c;
   height: 2px;
-  margin: 1rem 4rem;
+  margin: 1rem 8rem;
 }
