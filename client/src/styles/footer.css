@@ -1,0 +1,11 @@
+.footer {
+  background-color: var(--beige);
+}
+
+.footer-img {
+  display: flex;
+  justify-content: space-evenly;
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  margin: 1rem;
+  border-radius: 10px;
+}
