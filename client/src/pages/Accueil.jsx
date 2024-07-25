@@ -27,20 +27,24 @@ export default function Accueil() {
   };
 
   return (
-      <>
+    <>
       <Navbar />
-    <section className="homepage">
-      <Carousel />
-      <div className="swipe-buttons">
-        <button type="button" className="like-button" onClick={() => addCart()}>
-          <img src="../src/assets/images/like.svg" alt="next profile" />
-        </button>
-        <button type="button" className="buy-button">
-          <img src="../src/assets/images/superlike.png" alt="next profile" />
-        </button>
-      </div>
-    </section>
-   <Footer />
+      <section className="homepage">
+        <Carousel />
+        <div className="swipe-buttons">
+          <button
+            type="button"
+            className="like-button"
+            onClick={() => addCart()}
+          >
+            <img src="../src/assets/images/like.svg" alt="next profile" />
+          </button>
+          <button type="button" className="buy-button">
+            <img src="../src/assets/images/superlike.png" alt="next profile" />
+          </button>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 }
