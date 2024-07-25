@@ -42,4 +42,11 @@
   border-radius: 64px;
   height: 60px;
   width: 85px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.reject-button-cart:hover {
+  background-color: rgb(255, 215, 215);
+  transform: scale(1.1);
+  cursor: pointer;
 }
