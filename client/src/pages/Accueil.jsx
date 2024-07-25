@@ -18,6 +18,6 @@ export default function Accueil() {
           <img src="../src/assets/images/like.svg" alt="next profile" />
         </button>
       </div>
-    </ section>
+    </section>
   );
 }
