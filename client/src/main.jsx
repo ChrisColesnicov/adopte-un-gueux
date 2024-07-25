@@ -4,7 +4,10 @@ import ReactDOM from "react-dom/client";
 import getProfil from "./services/profils";
 
 import App from "./App";
-import Accueil from "./pages/Accueil"
+import Accueil from "./pages/Accueil";
+import Cart from "./pages/Cart";
+import CartProvider from "./contexts/CartContext";
+
 
 const router = createBrowserRouter([
   {
@@ -16,14 +19,21 @@ const router = createBrowserRouter([
         path: "/",
         element: <Accueil />,
       },
-    ],
-  },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+    ]
+    }
+
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
+    <CartProvider>
     <RouterProvider router={router} />
+    </CartProvider>
   </React.StrictMode>
 );
