@@ -1,10 +1,22 @@
 /* eslint-disable import/no-unresolved */
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { useLoaderData } from "react-router-dom";
+
+import Papa from "papaparse";
 
 import "@splidejs/react-splide/css";
 import "../styles/carousel.css";
 
 export default function Carousel() {
+  const dataFromLoader = useLoaderData();
+
+  const parse = () =>
+    Papa.parse(dataFromLoader.data, {
+      header: true,
+      complete: (result) => result,
+    });
+  const { data } = parse();
+
   return (
     <Splide
       className="carrousel"
@@ -16,32 +28,24 @@ export default function Carousel() {
         arrows: false,
       }}
     >
-      <SplideSlide className="userCarousel">
-        <div className="carouselDescription">
-          <h2 className="titleDescription">Aliénore d'Aquitaine, 22 ans</h2>
-          <div className="titrelieu">
-            <p>Baronne du Mont de Petrus</p>
-            <p>Saint-Emilion, Aquitaine</p>
+      {data?.map((profil) => (
+        <SplideSlide
+          key={profil.ID}
+          className="userCarousel"
+          style={{ backgroundImage: `url(${profil.image})` }}
+        >
+          <div className="carouselDescription">
+            <h2 className="titleDescription">
+              {profil.Prénom} {profil.Nom}, {profil.Age} ans
+            </h2>
+            <div className="titrelieu">
+              <p>{profil.Titre}</p>
+              <p>{profil.Localisation}</p>
+            </div>
+            <p className="userDescription">{profil.Description}</p>
           </div>
-          <p className="userDescription">
-            Cherche preu chevalier capable de couper des têtes avec son
-            *glaive*.
-          </p>
-        </div>
-      </SplideSlide>
-      <SplideSlide className="userCarousel">
-        <div className="carouselDescription">
-          <h2 className="titleDescription">Aliénore d'Aquitaine, 22 ans</h2>
-          <div className="titrelieu">
-            <p>Baronne du Mont de Petrus</p>
-            <p>Saint-Emilion, Aquitaine</p>
-          </div>
-          <p className="userDescription">
-            Cherche preu chevalier capable de couper des têtes avec son
-            *glaive*.
-          </p>
-        </div>
-      </SplideSlide>
+        </SplideSlide>
+      ))}
     </Splide>
   );
 }

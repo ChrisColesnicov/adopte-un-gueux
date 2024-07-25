@@ -9,7 +9,6 @@ import Chat from "./pages/Chat";
 import Cart from "./pages/Cart";
 import CartProvider from "./contexts/CartContext";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Accueil />,
+        loader: getProfil,
       },
       {
         path: "/chat",
@@ -28,9 +28,8 @@ const router = createBrowserRouter([
         path: "/cart",
         element: <Cart />,
       },
-    ]
-    }
-
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -38,7 +37,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <CartProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </CartProvider>
   </React.StrictMode>
 );
