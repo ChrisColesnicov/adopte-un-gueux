@@ -12,3 +12,6 @@
   --logo-font: "MedievalSharp", sans-serif;
   --main-font: "Gabriela", sans-serif;
 }
+body {
+  background-color: var(--beige);
+}

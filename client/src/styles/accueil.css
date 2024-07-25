@@ -1,0 +1,24 @@
+.swipe-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+.swipe-buttons > button {
+  border-radius: 32px;
+  height: 60px;
+  width: 100px;
+}
+
+.reject-button {
+  background-color: rgb(255, 125, 125);
+}
+
+.buy-button {
+  background-color: rgb(255, 255, 119);
+}
+
+.like-button {
+  background-color: rgb(124, 255, 124);
+}
