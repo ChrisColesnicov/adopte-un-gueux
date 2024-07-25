@@ -4,6 +4,7 @@ import ReactDOM from "react-dom/client";
 import getProfil from "./services/profils";
 
 import App from "./App";
+import Accueil from "./pages/Accueil"
 
 const router = createBrowserRouter([
   {
