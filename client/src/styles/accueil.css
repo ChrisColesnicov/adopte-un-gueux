@@ -6,19 +6,21 @@
 }
 
 .swipe-buttons > button {
-  border-radius: 32px;
-  height: 60px;
-  width: 100px;
-}
-
-.reject-button {
-  background-color: rgb(255, 125, 125);
+  border-radius: 50%;
+  height: 52px;
+  width: 52px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buy-button {
-  background-color: rgb(255, 255, 119);
+  background-color: #fe7489;
+  opacity: 0.8;
 }
 
 .like-button {
-  background-color: rgb(124, 255, 124);
+  background-color: #77dd77;
+  opacity: 0.8;
 }
