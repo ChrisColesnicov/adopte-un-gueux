@@ -1,12 +1,12 @@
 import { Outlet, useLoaderData } from "react-router-dom";
-import Papa from "papaparse"
+import Papa from "papaparse";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 import "./styles/App.css";
 import "./styles/accueil.css";
-import "./styles/cart.css"
+import "./styles/cart.css";
 
 function App() {
   const dataFromLoader = useLoaderData();
@@ -17,7 +17,7 @@ function App() {
       complete: (result) => result,
     });
   const { data } = parse();
-    console.info(data)
+  console.info(data);
   return (
     <>
       <Navbar />
