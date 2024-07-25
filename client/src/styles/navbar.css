@@ -1,12 +1,15 @@
 .navbar {
+  background-color: var(--beige);
+}
+.title-logo {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
-  background-color: var(--beige);
 }
 
 .siteName {
   color: var(--pink);
+  font-size: var(--logo-font);
 }
 
 .separator {

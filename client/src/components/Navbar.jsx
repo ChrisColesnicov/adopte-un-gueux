@@ -2,8 +2,8 @@ import "../styles/navbar.css";
 
 export default function Navbar() {
   return (
-    <>
-      <nav className="navbar">
+    <section className="navbar">
+      <nav className="title-logo">
         <h2 className="siteName">AdopteUnGueux</h2>
         <img
           src="../src/assets/images/logo.svg"
@@ -12,6 +12,6 @@ export default function Navbar() {
         />
       </nav>
       <div className="separator">{}</div>
-    </>
+    </section>
   );
 }
