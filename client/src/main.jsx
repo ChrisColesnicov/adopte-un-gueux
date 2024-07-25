@@ -7,8 +7,7 @@ import App from "./App";
 import Accueil from "./pages/Accueil";
 import Chat from "./pages/Chat";
 import Cart from "./pages/Cart";
-import CartProvider from "./contexts/CartContext";
-
+import { CartProvider } from "./contexts/CartContext";
 
 const router = createBrowserRouter([
   {
