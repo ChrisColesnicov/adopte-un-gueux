@@ -1,11 +1,17 @@
 .footer {
   background-color: var(--beige);
+  padding: 1rem 0 2rem 0;
+  border-top: 1px solid #2c2c2c;
 }
 
 .footer-img {
   display: flex;
-  justify-content: space-evenly;
-  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
-  margin: 1rem;
-  border-radius: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-img > img {
+  height: 36px;
+}
+.footer-img > img:nth-child(3) {
+  height: 30px;
 }
