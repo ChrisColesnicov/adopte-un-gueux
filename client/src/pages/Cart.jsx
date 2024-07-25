@@ -4,6 +4,8 @@ import Papa from "papaparse";
 
 import CartItem from "../components/CartItem";
 import CartContext from "../contexts/CartContext";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 
 
 export default function Cart() {
@@ -20,6 +22,8 @@ export default function Cart() {
   const profilesInCart = data.filter(profile => cart.includes(profile.ID));
 
   return (
+    <>
+    <Navbar />
     <section>
       <h2 className="cart-title">Panier de gueux</h2>
       <div className="cart-item-container">
@@ -28,5 +32,7 @@ export default function Cart() {
         )): (<p>Pas de gueux dans le panier</p>)}
       </div>
     </section>
+    <Footer />
+    </>
   );
 }
