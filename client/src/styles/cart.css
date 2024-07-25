@@ -21,6 +21,7 @@
   padding-right: 1rem;
   background-color: var(--yellow);
   border-radius: 8px;
+  width: 100%;
 }
 
 .cart-item-name {
@@ -38,7 +39,7 @@
 
 .reject-button-cart {
   background-color: rgb(255, 125, 125);
-  border-radius: 32px;
+  border-radius: 64px;
   height: 60px;
-  width: 60px;
+  width: 85px;
 }

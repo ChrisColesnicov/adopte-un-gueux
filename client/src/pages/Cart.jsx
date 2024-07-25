@@ -24,7 +24,7 @@ export default function Cart() {
       <h2 className="cart-title">Panier de gueux</h2>
       <div className="cart-item-container">
         {profilesInCart ? profilesInCart.map((profile) => (
-          <CartItem key={profile.id} profile={profile} />
+          <CartItem key={profile.ID} profile={profile} />
         )): (<p>Pas de gueux dans le panier</p>)}
       </div>
     </section>
