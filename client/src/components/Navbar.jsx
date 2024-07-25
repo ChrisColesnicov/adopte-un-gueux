@@ -18,7 +18,7 @@ export default function Navbar() {
           />
         </Link>
       </nav>
-      <div className="separator">{}</div>
+      <div className="separator" />
     </section>
   );
 }
