@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
+import backarrow from "@harmonia/server/public/assets/images/backArrow.png";
 import Footer from "../components/Footer";
 import chatData from "../services/chatData";
 import maleChatData from "../services/maleChatData";
@@ -63,7 +64,7 @@ export default function Chat() {
             className="btn-Back"
             onClick={handleClickNavigate}
           >
-            <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+            <img src={backarrow} alt="fleche retour" />
           </button>
           <Splide
             className="carrousel-content"
