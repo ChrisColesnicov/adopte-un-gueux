@@ -20,7 +20,7 @@ export default function Carousel() {
   const dataFilter = data.filter((user) => {
     const userChoices = JSON.parse(localStorage.getItem("choix"));
     const userName = localStorage.getItem("userName");
-    if (userChoices.length > 0) {
+    if (userChoices) {
       if (userChoices.includes("Cousin")) {
         return userName.includes(user.Nom);
       }
