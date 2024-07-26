@@ -25,7 +25,9 @@ export default function Carousel() {
         return userName.includes(user.Nom);
       }
       return (
-        userChoices.includes(user.Sexe) &&
+        (userChoices.includes(user.Sexe) &&
+        userChoices.includes(user.ClasseSociale)) ||
+        userChoices.includes(user.Sexe) ||
         userChoices.includes(user.ClasseSociale)
       );
     }
