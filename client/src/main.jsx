@@ -11,7 +11,6 @@ import Chat from "./pages/Chat";
 import Settings from "./pages/Settings";
 import Cart from "./pages/Cart";
 
-
 import { CartProvider } from "./contexts/CartContext";
 import UserDescriptif from "./components/UserDescriptif";
 
