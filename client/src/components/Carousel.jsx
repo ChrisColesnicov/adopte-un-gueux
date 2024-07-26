@@ -21,7 +21,6 @@ export default function Carousel() {
     const userChoices = JSON.parse(localStorage.getItem("choix"));
     const userName = localStorage.getItem("userName");
     if (userChoices.length > 0) {
-      // Vérifiez si "Cousin" est dans les choix
       if (userChoices.includes("Cousin")) {
         return userName.includes(user.Nom);
       }
@@ -31,17 +30,11 @@ export default function Carousel() {
           userChoices.includes(user.ClasseSociale)
         );
       }
-
-      // Vérifiez si "Homme" ou "Femme" est dans les choix
       if (userChoices.includes("Homme") || userChoices.includes("Femme")) {
         return userChoices.includes(user.Sexe);
       }
-
-      // Sinon, vérifiez la classe sociale
       return userChoices.includes(user.ClasseSociale);
     }
-
-    // Si aucun choix n'est sélectionné, retournez tous les utilisateurs
     return true;
   });
 
@@ -66,7 +59,7 @@ export default function Carousel() {
           style={{ backgroundImage: `url(${profil.image})` }}
         >
           <div className="carouselDescription">
-            <Link to={`/${profil.ID}`} className="linkDesc">
+            <Link to={`/Acceuil/${profil.ID}`} className="linkDesc">
               <h2 className="titleDescription">
                 {profil.Prénom} {profil.Nom}, {profil.Age} ans
               </h2>

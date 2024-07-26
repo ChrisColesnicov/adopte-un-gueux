@@ -30,7 +30,7 @@ const router = createBrowserRouter([
         loader: getProfil,
       },
       {
-        path: "/:id",
+        path: "/Acceuil/:id",
         element: <UserDescriptif />,
         loader: getProfil,
       },
