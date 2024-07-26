@@ -7,6 +7,7 @@ import App from "./App";
 import Accueil from "./pages/Accueil";
 import Cart from "./pages/Cart";
 import Chat from "./pages/Chat";
+import Settings from "./pages/Settings";
 
 import { CartProvider } from "./contexts/CartContext";
 import UserDescriptif from "./components/UserDescriptif";
@@ -34,6 +35,11 @@ const router = createBrowserRouter([
       {
         path: "/chat",
         element: <Chat />,
+        loader: getProfil,
+      },
+      {
+        path: "/settings",
+        element: <Settings />,
         loader: getProfil,
       },
     ],
