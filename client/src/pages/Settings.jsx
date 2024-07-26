@@ -27,6 +27,7 @@ export default function Settings() {
   useEffect(() => {
     const storedImage = localStorage.getItem("userImage");
     const storedGender = localStorage.getItem("userGender") || "Homme";
+    const storedUserName = localStorage.getItem("userName");
 
     if (storedImage) {
       setFormData((prevState) => ({
@@ -40,6 +41,13 @@ export default function Settings() {
         ...prevState,
         image: defaultImage,
         gender: storedGender,
+      }));
+    }
+
+    if (storedUserName) {
+      setFormData((prevState) => ({
+        ...prevState,
+        firstName: storedUserName, // Assurez-vous que cela correspond à ce que vous souhaitez
       }));
     }
   }, []);
