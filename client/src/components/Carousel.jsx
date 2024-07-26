@@ -18,21 +18,34 @@ export default function Carousel() {
   const { data } = parse();
 
   const dataFilter = data.filter((user) => {
-    const userChoices = localStorage.getItem("choix");
+    const userChoices = JSON.parse(localStorage.getItem("choix"));
     const userName = localStorage.getItem("userName");
-    if (userChoices) {
+    if (userChoices.length > 0) {
+      // Vérifiez si "Cousin" est dans les choix
       if (userChoices.includes("Cousin")) {
         return userName.includes(user.Nom);
       }
-      return (
-        (userChoices.includes(user.Sexe) &&
-        userChoices.includes(user.ClasseSociale)) ||
-        userChoices.includes(user.Sexe) ||
-        userChoices.includes(user.ClasseSociale)
-      );
+      if (userChoices.length > 1) {
+        return (
+          userChoices.includes(user.Sexe) &&
+          userChoices.includes(user.ClasseSociale)
+        );
+      }
+
+      // Vérifiez si "Homme" ou "Femme" est dans les choix
+      if (userChoices.includes("Homme") || userChoices.includes("Femme")) {
+        return userChoices.includes(user.Sexe);
+      }
+
+      // Sinon, vérifiez la classe sociale
+      return userChoices.includes(user.ClasseSociale);
     }
+
+    // Si aucun choix n'est sélectionné, retournez tous les utilisateurs
     return true;
   });
+
+  console.info(dataFilter);
 
   return dataFilter.length > 0 ? (
     <Splide

@@ -22,7 +22,7 @@ export default function Cart() {
   const profilesInCart = data.filter((profile) => cart.includes(profile.ID));
 
   const handleClickNavigate = () => {
-    navigate("/");
+    navigate("/Acceuil");
   };
 
   return (
