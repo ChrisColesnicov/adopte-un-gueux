@@ -84,7 +84,11 @@ export default function Chat() {
                   ...prevMessages,
                   chatData[chatIndex].response,
                 ]);
-                setChatIndex(chatIndex + 1);
+                if (chatIndex === 2) {
+                  setChatIndex(0);
+                } else {
+                  setChatIndex(chatIndex + 1);
+                }
               }, 2000);
             }}
           >
