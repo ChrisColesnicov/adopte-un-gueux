@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+:root {
+  --beige: #fdf9f1;
+  --pink: #fd878e;
+  --yellow: #ffde30;
+  --green: #73d290;
+  --logo-font: "MedievalSharp", sans-serif;
+  --main-font: "Gabriela", sans-serif;
+}

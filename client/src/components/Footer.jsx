@@ -8,8 +8,15 @@ export default function Footer() {
   const { cart } = useContext(CartContext);
   return (
     <section className="footer">
+      <div className="separator">{}</div>
       <div className="footer-img">
-        <img src="../src/assets/images/onboarding.svg" alt="Go to Onboarding" />
+        <Link to="/onboard">
+          <img
+            src="../src/assets/images/onboarding.svg"
+            alt="Go to Onboarding"
+          />
+        </Link>
+
         <Link to="/chat">
           <img src="../src/assets/images/chat.png" alt="Go to chat" />
         </Link>
@@ -21,6 +28,7 @@ export default function Footer() {
           />
           <span className="cart-number">{cart.length}</span>
         </Link>
+
         <img src="../src/assets/images/parameters.svg" alt="Go to parameters" />
       </div>
     </section>
