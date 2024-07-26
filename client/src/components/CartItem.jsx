@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import CartContext from "../contexts/CartContext";
 
 export default function CartItem({ profile }) {
   const { setCart } = useContext(CartContext);
+  const navigate = useNavigate();
 
   const addCart = () => {
     const id = profile.ID;
@@ -21,9 +25,16 @@ export default function CartItem({ profile }) {
     });
   };
 
+  const handleClickDescriptif = (id) => {
+    navigate(`/Acceuil/${id}`);
+  };
+
   return (
     <div className="cart-item-profile-container">
-      <div className="cart-item-profile">
+      <div
+        className="cart-item-profile"
+        onClick={() => handleClickDescriptif(`${profile.ID}`)}
+      >
         <img
           src={profile.image}
           alt={profile.Prénom}
