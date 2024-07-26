@@ -5,32 +5,45 @@ import getProfil from "./services/profils";
 
 import App from "./App";
 import Accueil from "./pages/Accueil";
+
+import Onboarding from "./pages/Onboarding";
 import Chat from "./pages/Chat";
 import Cart from "./pages/Cart";
-import CartProvider from "./contexts/CartContext";
 
+import { CartProvider } from "./contexts/CartContext";
+import UserDescriptif from "./components/UserDescriptif";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    loader: getProfil,
     children: [
       {
         path: "/",
         element: <Accueil />,
+        loader: getProfil,
       },
       {
-        path: "/chat",
-        element: <Chat />,
+        path: "/onboard",
+        element: <Onboarding />,
+      },
+      {
+        path: "/:id",
+        element: <UserDescriptif />,
+        loader: getProfil,
       },
       {
         path: "/cart",
         element: <Cart />,
+        loader: getProfil,
       },
-    ]
-    }
-
+      {
+        path: "/chat",
+        element: <Chat />,
+        loader: getProfil,
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -38,7 +51,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <CartProvider>
-    <RouterProvider router={router} />
+      <RouterProvider router={router} />
     </CartProvider>
   </React.StrictMode>
 );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 
 export default function Navbar() {
@@ -9,13 +10,15 @@ export default function Navbar() {
           <span className="title-un">Un</span>
           <span className="title-gueux">Gueux</span>
         </h2>
-        <img
-          src="../src/assets/images/logo.svg"
-          className="logo"
-          alt="Logo - Adopte Un Gueux"
-        />
+        <Link to="/">
+          <img
+            src="../src/assets/images/logo.svg"
+            className="logo"
+            alt="Logo - Adopte Un Gueux"
+          />
+        </Link>
       </nav>
-      <div className="separator">{}</div>
+      <div className="separator" />
     </section>
   );
 }

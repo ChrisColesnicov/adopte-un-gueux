@@ -2,7 +2,6 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  /* font-family: var(--main-font); */
 }
 :root {
   --beige: #fdf9f1;
@@ -11,9 +10,4 @@
   --green: #73d290;
   --logo-font: "MedievalSharp", sans-serif;
   --main-font: "Gabriela", sans-serif;
-}
-#root {
-  background-color: var(--beige);
-  min-height: 100vh;
-  padding: 1rem 0.5rem;
 }
