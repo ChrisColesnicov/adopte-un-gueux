@@ -1,13 +1,9 @@
 import { useEffect } from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 import "../styles/Settings.css";
 
-export default function UserVisualisation({
-formData,
-  isOpen,
-  onClose,
-}) {
+export default function UserVisualisation({ formData, isOpen, onClose }) {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (event.target.closest(".modal-content") === null) {
@@ -22,8 +18,13 @@ formData,
   if (!isOpen) return null;
   return (
     <section className="userVisualisation">
-      <img src={formData.image} alt={formData.firstName} />
-      <div className="mainDescript">
+      <img
+        className="imgUserProfil"
+        src={formData.image}
+        alt={formData.firstName}
+      />
+
+      <div className="mainUserDescript">
         <p>
           {formData.firstName} {formData.lastName}
         </p>
@@ -39,18 +40,18 @@ formData,
   );
 }
 UserVisualisation.propTypes = {
-  formData : PropTypes.shape({
+  formData: PropTypes.shape({
     image: PropTypes.string,
-    firstName : PropTypes.string,
-    lastName : PropTypes.string,
-    age : PropTypes.number,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    age: PropTypes.number,
     title: PropTypes.string,
     selectedValue: PropTypes.string,
     profession: PropTypes.string,
     interests: PropTypes.string,
     description: PropTypes.string,
-    location : PropTypes.string,
+    location: PropTypes.string,
   }).isRequired,
   isOpen: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
+  onClose: PropTypes.func.isRequired,
 };

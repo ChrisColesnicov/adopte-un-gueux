@@ -22,7 +22,10 @@ export default function Footer() {
           <span className="cart-number">{cart.length}</span>
         </Link>
         <Link to="/settings" className="Settings-link">
-        <img src="../src/assets/images/parameters.svg" alt="Go to parameters" />
+          <img
+            src="../src/assets/images/parameters.svg"
+            alt="Go to parameters"
+          />
         </Link>
       </div>
     </section>

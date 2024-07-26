@@ -113,150 +113,174 @@ export default function Settings() {
   ];
 
   return (
-    <div className="Settings">
+    <>
       <Navbar />
-      <h2>Charger une Image</h2>
-      <img src={formData.image} alt="profil" />
-      <input type="file" accept="image/*" onChange={handleFileChange} />
-      <button type="button" onClick={handleClearImage}>
-        Supprimer image
-      </button>
+      <div className="Settings">
+        <h2>Charger une Image</h2>
+        <img className="profilImg" src={formData.image} alt="profil" />
+        <div className="file">
+          <input
+            className="fileInput"
+            type="file"
+            accept="image/*"
+            onChange={handleFileChange}
+          />
+          <button
+            type="button"
+            onClick={handleClearImage}
+            className="settings-button"
+          >
+            Supprimer image
+          </button>
+        </div>
+        <div className="genre-settings">
+          <label>
+            <input
+              type="radio"
+              value="Homme"
+              checked={formData.gender === "Homme"}
+              onChange={handleGenderChange}
+              className="settings-input"
+            />
+            Homme
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="Femme"
+              checked={formData.gender === "Femme"}
+              onChange={handleGenderChange}
+              className="settings-input"
+            />
+            Femme
+          </label>
+        </div>
 
-      <div>
-        <label>
-          <input
-            type="radio"
-            value="Homme"
-            checked={formData.gender === "Homme"}
-            onChange={handleGenderChange}
-          />
-          Homme
-        </label>
-        <label>
-          <input
-            type="radio"
-            value="Femme"
-            checked={formData.gender === "Femme"}
-            onChange={handleGenderChange}
-          />
-          Femme
-        </label>
-      </div>
+        <div className="userName">
+          <label>
+            Prénom :
+            <input
+              type="text"
+              name="firstName"
+              placeholder="Prénom"
+              value={formData.firstName}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+          <br />
+          <label>
+            Nom :
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Nom"
+              value={formData.lastName}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+        </div>
+        <div className="userTitre">
+          <label>
+            Localisation :
+            <input
+              type="text"
+              name="location"
+              placeholder="Localisation"
+              value={formData.location}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+          <br />
+          <label>
+            Titre :
+            <input
+              type="text"
+              name="title"
+              placeholder="Votre titre"
+              value={formData.title}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+          <br />
 
-      <div>
-        <label>
-          Prénom
-          <input
-            type="text"
-            name="firstName"
-            placeholder="Prénom"
-            value={formData.firstName}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Nom
-          <input
-            type="text"
-            name="lastName"
-            placeholder="Nom"
-            value={formData.lastName}
-            onChange={handleInputChange}
-          />
-        </label>
+          <label>
+            Age :
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              value={formData.age}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+        </div>
+        <div className="optionProfession">
+          <label htmlFor="dropdown">Choisir une option :</label>
+          <select
+            id="dropdown"
+            name="selectedValue"
+            value={formData.selectedValue}
+            onChange={handleChange}
+          >
+            {options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
+          </select>
+          <br />
+          <label>
+            Profession :
+            <input
+              type="text"
+              name="profession"
+              placeholder="Profession"
+              value={formData.profession}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+        </div>
+        <div className="user-Description">
+          <label>
+            Intérêts :
+            <input
+              type="text"
+              name="interests"
+              placeholder="Intérêts"
+              value={formData.interests}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+          <br />
+          <label>
+            Description :
+            <input
+              type="text"
+              name="description"
+              placeholder="Description"
+              value={formData.description}
+              onChange={handleInputChange}
+              className="settings-input"
+            />
+          </label>
+        </div>
+        <button className="profilButton" type="button" onClick={openModal}>
+          Voir le profil
+        </button>
+        <UserVisualisation
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          formData={formData}
+        />
       </div>
-      <div>
-        <label>
-          Localisation
-          <input
-            type="text"
-            name="location"
-            placeholder="Localisation"
-            value={formData.location}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Titre
-          <input
-            type="text"
-            name="title"
-            placeholder="Votre titre"
-            value={formData.title}
-            onChange={handleInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Age
-          <input
-            type="number"
-            name="age"
-            placeholder="Age"
-            value={formData.age}
-            onChange={handleInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="dropdown">Choisir une option:</label>
-        <select
-          id="dropdown"
-          name="selectedValue"
-          value={formData.selectedValue}
-          onChange={handleChange}
-        >
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
-              {option.label}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <label>
-          Profession
-          <input
-            type="text"
-            name="profession"
-            placeholder="Profession"
-            value={formData.profession}
-            onChange={handleInputChange}
-          />
-        </label>
-      </div>
-      <div>
-        <label>
-          Intérêts
-          <input
-            type="text"
-            name="interests"
-            placeholder="Intérêts"
-            value={formData.interests}
-            onChange={handleInputChange}
-          />
-        </label>
-        <label>
-          Description
-          <input
-            type="text"
-            name="description"
-            placeholder="Description"
-            value={formData.description}
-            onChange={handleInputChange}
-          />
-        </label>
-      </div>
-      <button type="button" onClick={openModal}>
-        Voir le profil
-      </button>
-      <UserVisualisation
-        isOpen={isModalOpen}
-        onClose={closeModal}
-        formData={formData}
-      />
       <Footer />
-    </div>
+    </>
   );
 }

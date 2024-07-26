@@ -1,0 +1,92 @@
+.Settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 6rem;
+  font-family: var(--main-font);
+}
+.Settings > h2 {
+  padding-bottom: 1rem;
+  font-size: 1rem;
+}
+.profilImg {
+  width: 10rem;
+  height: auto;
+  padding-bottom: 1rem;
+}
+.file {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+.userName {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.userTitre {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.optionProfession {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+}
+.user-Description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.settings-input {
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  border: none;
+  border-radius: 4px;
+  font-family: var(--main-font);
+  font-size: 1rem;
+}
+.settings-button {
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+}
+.profilButton {
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  font-size: 1rem;
+  font-family: var(--logo-font);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.imgUserProfil {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.mainUserDescript {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50vh;
+  text-align: center;
+  padding: 1.5rem 0.5rem 1.5rem 0.5rem;
+  background-color: #2c2c2c;
+  border-radius: 36px;
+  border: 2px solid #fb8b9c;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.mainUserDescript > p {
+  font-family: var(--font-p);
+  line-height: 1.2rem;
+  color: var(--primary-color);
+}
+.genre-settings {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
