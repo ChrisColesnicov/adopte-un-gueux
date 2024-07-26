@@ -41,7 +41,7 @@ export default function Onboarding() {
     <>
       <Navbar />
       <section className="onboarding">
-        <h3>Par quel noms on vous connaît en ce pays ?</h3>
+        <h3>Par quels noms on vous connaît en ce pays ?</h3>
         <form onSubmit={handleSubmit}>
           <input
             className={maximumReached ? "length-maximum-reached" : "length-ok"}
@@ -55,7 +55,7 @@ export default function Onboarding() {
             {numRemaining} {plurial()}
           </small>
         </form>
-        <h3>Bienvenue à toi {title}</h3>
+        <h3>Bienvenue à vous {title}</h3>
         <h3>De quel genre êtes-vous ?</h3>
         <div className="gender">
           <div className="gender-1">
@@ -69,7 +69,7 @@ export default function Onboarding() {
             </label>
           </div>
         </div>
-        <h3>De quel genre recherchez-vous ?</h3>
+        <h3>Quel genre recherchez-vous ?</h3>
         <div className="search-gender">
           <div className="one-gender">
             <label>
