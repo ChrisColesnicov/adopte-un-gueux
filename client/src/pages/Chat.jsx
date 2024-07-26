@@ -1,10 +1,11 @@
 /* eslint-disable react/button-has-type */
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-
+import Footer from "../components/Footer";
 import chatData from "../services/chatData";
+import maleChatData from "../services/maleChatData";
 
 import "../styles/chat.css";
 import Envoyer from "../assets/images/Envoyer.png";
@@ -14,6 +15,7 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
 
   const dataFromLoader = useLoaderData();
+  const navigate = useNavigate();
 
   const parse = () =>
     Papa.parse(dataFromLoader.data, {
@@ -21,16 +23,48 @@ export default function Chat() {
       complete: (result) => result,
     });
   const { data } = parse();
-  console.info(data);
+
+  const dataFilter = data.filter((user) => {
+    const userChoices = localStorage.getItem("choix");
+    const userName = localStorage.getItem("userName");
+    if (userChoices) {
+      if (userChoices.includes("Cousin")) {
+        return userName.includes(user.Nom);
+      }
+      return (
+        (userChoices.includes(user.Sexe) &&
+          userChoices.includes(user.ClasseSociale)) ||
+        userChoices.includes(user.Sexe) ||
+        userChoices.includes(user.ClasseSociale)
+      );
+    }
+    return true;
+  });
+
+  const [gender, setGender] = useState("");
+  console.info("depuis findgender", gender);
 
   const getInputText = (event) => {
     setInput(event.target.value);
+  };
+
+  const [chatIndex, setChatIndex] = useState(0);
+
+  const handleClickNavigate = () => {
+    navigate("/Acceuil");
   };
 
   return (
     <>
       <section className="chat-caroussel">
         <div className="active-chat">
+          <button
+            type="button"
+            className="btn-Back"
+            onClick={handleClickNavigate}
+          >
+            <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+          </button>
           <Splide
             className="carrousel-content"
             options={{
@@ -42,9 +76,18 @@ export default function Chat() {
               arrows: false,
             }}
           >
-            {data?.map((picture) => (
+            {dataFilter?.map((picture) => (
               <SplideSlide key={picture.ID} className="chat-carrousel">
-                <img className="chat-profil" src={picture.image} alt="profil" />
+                <img
+                  aria-hidden="true"
+                  onClick={() => {
+                    setGender(picture.Sexe);
+                    setMessages([]);
+                  }}
+                  className="chat-profil"
+                  src={picture.image}
+                  alt="profil"
+                />
               </SplideSlide>
             ))}
           </Splide>
@@ -54,7 +97,7 @@ export default function Chat() {
       <section className="chat-window">
         <div className="chat">
           {messages.map((message) => (
-            <p key={message} className="message-text">
+            <p key={message.id} className="message-text">
               {message}
             </p>
           ))}
@@ -69,8 +112,15 @@ export default function Chat() {
               setTimeout(() => {
                 setMessages((prevMessages) => [
                   ...prevMessages,
-                  chatData[0].response,
+                  gender === "Femme"
+                    ? chatData[chatIndex].response
+                    : maleChatData[chatIndex].response,
                 ]);
+                if (chatIndex === chatData.length - 1) {
+                  setChatIndex(0);
+                } else {
+                  setChatIndex(chatIndex + 1);
+                }
               }, 2000);
             }}
           >
@@ -79,6 +129,7 @@ export default function Chat() {
           </button>
         </form>
       </section>
+      <Footer />
     </>
   );
 }

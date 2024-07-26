@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 
 import CartItem from "../components/CartItem";
@@ -10,6 +10,7 @@ import Navbar from "../components/Navbar";
 export default function Cart() {
   const { cart } = useContext(CartContext);
   const dataFromLoader = useLoaderData();
+  const navigate = useNavigate();
 
   const parse = () =>
     Papa.parse(dataFromLoader.data, {
@@ -20,10 +21,17 @@ export default function Cart() {
 
   const profilesInCart = data.filter((profile) => cart.includes(profile.ID));
 
+  const handleClickNavigate = () => {
+    navigate("/Acceuil");
+  };
+
   return (
     <>
       <Navbar />
-      <section>
+      <button type="button" className="btn-Back" onClick={handleClickNavigate}>
+        <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+      </button>
+      <section className="cartSection">
         <h2 className="cart-title">Panier de gueux</h2>
         <div className="cart-item-container">
           {profilesInCart ? (

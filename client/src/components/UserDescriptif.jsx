@@ -26,7 +26,7 @@ export default function UserDescriptif() {
   }, [id]);
 
   const handleClickNavigate = () => {
-    navigate("/");
+    navigate("/Acceuil");
   };
 
   return (

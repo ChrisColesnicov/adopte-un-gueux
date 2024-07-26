@@ -5,9 +5,12 @@ import getProfil from "./services/profils";
 
 import App from "./App";
 import Accueil from "./pages/Accueil";
-import Cart from "./pages/Cart";
+
+import Onboarding from "./pages/Onboarding";
 import Chat from "./pages/Chat";
 import Settings from "./pages/Settings";
+import Cart from "./pages/Cart";
+
 
 import { CartProvider } from "./contexts/CartContext";
 import UserDescriptif from "./components/UserDescriptif";
@@ -19,6 +22,10 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        element: <Onboarding />,
+      },
+      {
+        path: "/Acceuil",
         element: <Accueil />,
         loader: getProfil,
       },
