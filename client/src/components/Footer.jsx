@@ -26,9 +26,12 @@ export default function Footer() {
             alt="Your cart - Favorite people"
             className="cart-icon"
           />
-          <span className="cart-number">{cart.length}</span>
+          {cart.length > 0 ? (
+            <span className="cart-number">{cart.length}</span>
+          ) : (
+            ""
+          )}
         </Link>
-
         <img src="../src/assets/images/parameters.svg" alt="Go to parameters" />
       </div>
     </section>
