@@ -1,7 +1,8 @@
 import { useContext } from "react";
+import like from "@harmonia/server/public/assets/images/like.svg";
+import superlike from "@harmonia/server/public/assets/images/superlike.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import Carousel from "../components/Carousel";
 import CartContext from "../contexts/CartContext";
 
@@ -37,10 +38,10 @@ export default function Accueil() {
             className="like-button"
             onClick={() => addCart()}
           >
-            <img src="../src/assets/images/like.svg" alt="next profile" />
+            <img src={like} alt="next profile" />
           </button>
           <button type="button" className="buy-button">
-            <img src="../src/assets/images/superlike.png" alt="next profile" />
+            <img src={superlike} alt="next profile" />
           </button>
         </div>
       </section>

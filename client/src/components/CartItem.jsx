@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/prop-types */
+
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import next from "@harmonia/server/public/assets/images/next.svg";
 import CartContext from "../contexts/CartContext";
+
 
 export default function CartItem({ profile }) {
   const { setCart } = useContext(CartContext);
@@ -50,7 +53,7 @@ export default function CartItem({ profile }) {
         className="reject-button-cart"
         onClick={() => addCart()}
       >
-        <img src="../src/assets/images/next.svg" alt="next profile" />
+        <img src={next} alt="next profile" />
       </button>
     </div>
   );
