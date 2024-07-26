@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import profilH from "../assets/images/profilH.png";
-import profilF from "../assets/images/profilF.png";
+import profilH from "@harmonia/server/public/assets/images/profilH.png";
+import profilF from "@harmonia/server/public/assets/images/profilF.png";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import UserVisualisation from "../components/UserVisualisation";

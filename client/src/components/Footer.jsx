@@ -1,5 +1,9 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import onboarding from "@harmonia/server/public/assets/images/onboarding.svg";
+import chat from "@harmonia/server/public/assets/images/chat.png";
+import chariot from "@harmonia/server/public/assets/images/cart.png";
+import parameters from "@harmonia/server/public/assets/images/parameters.svg";
 import CartContext from "../contexts/CartContext";
 
 import "../styles/footer.css";
@@ -14,18 +18,15 @@ export default function Footer() {
       <div className="separator">{}</div>
       <div className="footer-img">
         <Link to="/" onClick={handleClickOnboard}>
-          <img
-            src="../src/assets/images/onboarding.svg"
-            alt="Go to Onboarding"
-          />
+          <img src={onboarding} alt="Go to Onboarding" />
         </Link>
 
         <Link to="/chat">
-          <img src="../src/assets/images/chat.png" alt="Go to chat" />
+          <img src={chat} alt="Go to chat" />
         </Link>
         <Link to="/cart" className="cart-link">
           <img
-            src="../src/assets/images/cart.png"
+            src={chariot}
             alt="Your cart - Favorite people"
             className="cart-icon"
           />
@@ -36,10 +37,7 @@ export default function Footer() {
           )}
         </Link>
         <Link to="/settings" className="Settings-link">
-          <img
-            src="../src/assets/images/parameters.svg"
-            alt="Go to parameters"
-          />
+          <img src={parameters} alt="Go to parameters" />
         </Link>
       </div>
     </section>

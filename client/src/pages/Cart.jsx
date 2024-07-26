@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
+import backarrow from "@harmonia/server/public/assets/images/backArrow.png";
 
 import CartItem from "../components/CartItem";
 import CartContext from "../contexts/CartContext";
@@ -29,7 +30,7 @@ export default function Cart() {
     <>
       <Navbar />
       <button type="button" className="btn-Back" onClick={handleClickNavigate}>
-        <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+        <img src={backarrow} alt="fleche retour" />
       </button>
       <section className="cartSection">
         <h2 className="cart-title">Panier de gueux</h2>
