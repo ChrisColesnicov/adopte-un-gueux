@@ -1,0 +1,106 @@
+body {
+  height: 100svw;
+}
+
+.carrousel-content {
+  height: 9rem;
+  width: 100%;
+}
+
+.chat-caroussel {
+  width: 100%;
+  height: 10rem;
+  border-radius: 50%;
+  margin: 2rem 0 -1rem 0;
+}
+
+.chat-profil {
+  border-radius: 50%;
+  height: 6rem;
+  width: 6rem;
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  padding: 3px;
+}
+
+.splide__slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-window {
+  background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
+  width: 100%;
+  height: 30rem;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-content: stretch;
+  flex-wrap: wrap;
+}
+
+.chat {
+  padding: 1rem;
+  width: 100%;
+  height: 85%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.input-area {
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  align-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+}
+.input-area > .send > img {
+  position: absolute;
+  margin-top: -1rem;
+  right: 2rem;
+  height: 2rem;
+}
+.chat-input {
+  height: 2rem;
+  border-radius: 18px;
+  width: 60%;
+  border-style: none;
+  background-color: none;
+  outline: none;
+  padding-left: 1rem;
+}
+
+.send {
+  border-style: none;
+  background-color: transparent;
+}
+
+.message-text:nth-child(2n) {
+  background-color: #fd7d79;
+  padding: 0.5rem;
+  width: fit-content;
+  border-radius: 18px;
+}
+
+.message-text:nth-child(2n + 1) {
+  background-color: #db7f91c2;
+  padding: 0.5rem;
+  margin-left: auto;
+  width: fit-content;
+  max-width: 50%;
+  border-radius: 18px;
+}
+.btn-Back {
+  border: none;
+  background: none;
+  width: fit-content;
+  position: absolute;
+  top: 1rem;
+}
+.btn-Back > img {
+  height: 48px;
+}

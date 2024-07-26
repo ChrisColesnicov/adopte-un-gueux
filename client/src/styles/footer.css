@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--beige);
+  padding: 0 0 2rem 0;
+}
+.separator {
+  background-color: #2c2c2c;
+  height: 1px;
+  width: 80%;
+  margin: 1rem auto 1.5rem auto;
+}
+.footer-img {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-img > a > img {
+  height: 36px;
+}
+.footer-img > img {
+  height: 36px;
+}
+.footer-img > a:nth-child(3) > img {
+  height: 30px;
+}
