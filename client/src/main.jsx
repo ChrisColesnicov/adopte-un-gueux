@@ -27,8 +27,6 @@ const router = createBrowserRouter([
         path: "/onboard",
         element: <Onboarding />,
       },
-
-      { path: "/chat", element: <Chat /> },
       {
         path: "/:id",
         element: <UserDescriptif />,

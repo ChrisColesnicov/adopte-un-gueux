@@ -16,8 +16,8 @@ body {
 
 .chat-profil {
   border-radius: 50%;
-  height: 5rem;
-  width: 5rem;
+  height: 6rem;
+  width: 6rem;
   background: linear-gradient(90deg, #febdab, #fe94aa, #fd7d79);
   padding: 3px;
 }

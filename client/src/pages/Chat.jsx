@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-
+import Footer from "../components/Footer";
 import chatData from "../services/chatData";
 
 import "../styles/chat.css";
@@ -22,11 +22,12 @@ export default function Chat() {
       complete: (result) => result,
     });
   const { data } = parse();
-  console.info(data);
 
   const getInputText = (event) => {
     setInput(event.target.value);
   };
+
+  const [chatIndex, setChatIndex] = useState(0);
 
   const handleClickNavigate = () => {
     navigate("/");
@@ -66,7 +67,7 @@ export default function Chat() {
       <section className="chat-window">
         <div className="chat">
           {messages.map((message) => (
-            <p key={message} className="message-text">
+            <p key={message.id} className="message-text">
               {message}
             </p>
           ))}
@@ -81,8 +82,9 @@ export default function Chat() {
               setTimeout(() => {
                 setMessages((prevMessages) => [
                   ...prevMessages,
-                  chatData[0].response,
+                  chatData[chatIndex].response,
                 ]);
+                setChatIndex(chatIndex + 1);
               }, 2000);
             }}
           >
@@ -91,6 +93,7 @@ export default function Chat() {
           </button>
         </form>
       </section>
+      <Footer />
     </>
   );
 }

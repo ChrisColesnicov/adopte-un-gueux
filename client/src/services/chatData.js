@@ -1,12 +1,15 @@
 const chatData = [
   {
-    response: "hello belle jeune femme !",
+    id: 1,
+    response: "hello preux Chevalier !",
   },
   {
-    response: "Comment tu vas ?",
+    id: 2,
+    response: "Ca va et toi ?",
   },
   {
-    response: "Moi ça va, je viens de finir de dépecé un dragon.",
+    id: 3,
+    response: "Moi, je t'attendais pour démarrer mon comte de fée et toi ?",
   },
 ];
 
