@@ -35,12 +35,14 @@
 }
 .carouselDescription {
   height: 30%;
-  width: 100%;
+  width: 95%;
   border-radius: 36px;
   background-color: rgba(82, 82, 82, 0.7);
   backdrop-filter: blur(5px);
   padding: 0.5rem 1rem;
   font-family: var(--font-p);
+  position: absolute;
+  bottom: 0.5rem;
 }
 .titleDescription {
   font-size: 1.3rem;
