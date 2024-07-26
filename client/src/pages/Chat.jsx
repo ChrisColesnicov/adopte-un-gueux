@@ -84,7 +84,7 @@ export default function Chat() {
                   ...prevMessages,
                   chatData[chatIndex].response,
                 ]);
-                if (chatIndex === 2) {
+                if (chatIndex === chatData.length - 1) {
                   setChatIndex(0);
                 } else {
                   setChatIndex(chatIndex + 1);
