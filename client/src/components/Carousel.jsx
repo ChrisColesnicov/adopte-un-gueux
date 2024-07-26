@@ -17,7 +17,22 @@ export default function Carousel() {
     });
   const { data } = parse();
 
-  return (
+  const dataFilter = data.filter((user) => {
+    const userChoices = localStorage.getItem("choix");
+    const userName = localStorage.getItem("userName");
+    if (userChoices) {
+      if (userChoices.includes("Cousin")) {
+        return userName.includes(user.Nom);
+      }
+      return (
+        userChoices.includes(user.Sexe) &&
+        userChoices.includes(user.ClasseSociale)
+      );
+    }
+    return true;
+  });
+
+  return dataFilter.length > 0 ? (
     <Splide
       className="carrousel"
       options={{
@@ -28,7 +43,8 @@ export default function Carousel() {
         arrows: false,
       }}
     >
-      {data?.map((profil) => (
+      {" "}
+      {dataFilter?.map((profil) => (
         <SplideSlide
           key={profil.ID}
           className="userCarousel"
@@ -49,5 +65,13 @@ export default function Carousel() {
         </SplideSlide>
       ))}
     </Splide>
+  ) : (
+    <div className="errorFound">
+      <p>
+        "En ces temps médiévaux, même les gueux refusent de vous fréquenter, de
+        peur que leur misère ne paraisse enviable en comparaison de votre
+        compagnie!"
+      </p>
+    </div>
   );
 }

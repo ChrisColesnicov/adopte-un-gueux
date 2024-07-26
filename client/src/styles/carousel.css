@@ -73,3 +73,29 @@
   padding-top: 0.5rem;
   border-top: 1px solid var(--primary-color);
 }
+
+/* ERROR */
+
+.errorFound {
+  margin: 4rem auto 4rem auto;
+  height: 30vh;
+  width: 100%;
+  border-radius: 36px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../assets/images/refus.png");
+  background-position: center;
+  background-size: 60%;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+  border: 2px solid #fd8e9e;
+}
+.errorFound > p {
+  font-family: var(--font-p);
+  font-weight: bold;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  text-align: center;
+}

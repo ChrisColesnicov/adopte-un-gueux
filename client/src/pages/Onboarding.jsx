@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import "../styles/onboarding.css";
 
 export default function Onboarding() {
   const [check, setCheck] = useState(false);
   const [title, setTitle] = useState("");
+  const navigate = useNavigate();
   const handleSubmit = (event) => event.preventDefault();
   const MAX_LENGTH = 30;
   const handleChange = (event) => {
@@ -17,7 +18,24 @@ export default function Onboarding() {
   const numRemaining = MAX_LENGTH - title.length;
   const plurial = () =>
     title.length > 28 ? "caractère restant" : "caractères restants";
-  const handleCheckChange = () => setCheck(!check);
+
+  const handleCheckChange = (e) => {
+    setCheck(!check);
+    let choixLocal = localStorage.getItem("choix");
+
+    choixLocal = choixLocal ? JSON.parse(choixLocal) : [];
+    if (choixLocal.includes(e.target.name)) {
+      choixLocal = choixLocal.filter((item) => item !== e.target.name);
+    } else {
+      choixLocal.push(e.target.name);
+    }
+    localStorage.setItem("choix", JSON.stringify(choixLocal));
+  };
+
+  const handleClickNavigate = () => {
+    localStorage.setItem("userName", title);
+    navigate("/");
+  };
 
   return (
     <>
@@ -42,24 +60,12 @@ export default function Onboarding() {
         <div className="gender">
           <div className="gender-1">
             <label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="Homme"
-                onChange={handleCheckChange}
-              />{" "}
-              Homme
+              <input className="checkbox" type="checkbox" name="Homme" /> Homme
             </label>
           </div>
           <div className="gender-2">
             <label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="Homme"
-                onChange={handleCheckChange}
-              />{" "}
-              Femme
+              <input className="checkbox" type="checkbox" name="Femme" /> Femme
             </label>
           </div>
         </div>
@@ -79,7 +85,7 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Homme"
+                name="Femme"
                 onChange={handleCheckChange}
               />{" "}
               Femme
@@ -90,18 +96,13 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name=" SCousin/Cousine"
+                name="Cousin"
                 onChange={handleCheckChange}
               />{" "}
               Cousin/Cousine
             </label>
             <label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="Chèvre"
-                onChange={handleCheckChange}
-              />{" "}
+              <input className="checkbox" type="checkbox" name="Chèvre" />{" "}
               Chèvre
             </label>
           </div>
@@ -110,21 +111,11 @@ export default function Onboarding() {
         <div className="relation">
           <div className="one-relation">
             <label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="Mariage forcé"
-                onChange={handleCheckChange}
-              />{" "}
-              Mariage forcé
+              <input className="checkbox" type="checkbox" name="Libertine" />{" "}
+              Libertine
             </label>
             <label>
-              <input
-                className="checkbox"
-                type="checkbox"
-                name="Familiale"
-                onChange={handleCheckChange}
-              />{" "}
+              <input className="checkbox" type="checkbox" name="Familiale" />{" "}
               Familiale
             </label>
           </div>
@@ -134,7 +125,6 @@ export default function Onboarding() {
                 className="checkbox"
                 type="checkbox"
                 name="Jout d'une nuit"
-                onChange={handleCheckChange}
               />{" "}
               Jout d'une nuit
             </label>
@@ -142,10 +132,9 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Libertine"
-                onChange={handleCheckChange}
+                name="Mariage forcé"
               />{" "}
-              Libertine
+              Mariage forcé
             </label>
           </div>
         </div>
@@ -165,7 +154,7 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Bourgeoise"
+                name="Clergé"
                 onChange={handleCheckChange}
               />{" "}
               Clergé
@@ -174,10 +163,10 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Marginaux"
+                name="Élite"
                 onChange={handleCheckChange}
               />{" "}
-              Marginaux
+              Élite
             </label>
           </div>
           <div className="rang-2">
@@ -185,27 +174,30 @@ export default function Onboarding() {
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Clergé"
+                name="Aristocratie"
                 onChange={handleCheckChange}
               />{" "}
-              Bourgoise
+              Aristocratie
             </label>
             <label>
               <input
                 className="checkbox"
                 type="checkbox"
-                name="Paysannerie"
+                name="Prêtre"
                 onChange={handleCheckChange}
               />{" "}
-              Paysannerie
+              Prêtre
             </label>
           </div>
         </div>
-        <button type="button" className="button-onboarding">
+        <button
+          type="button"
+          className="button-onboarding"
+          onClick={handleClickNavigate}
+        >
           VALIDER
         </button>
       </section>
-      <Footer />
     </>
   );
 }

@@ -6,11 +6,14 @@ import "../styles/footer.css";
 
 export default function Footer() {
   const { cart } = useContext(CartContext);
+
+  const handleClickOnboard = () => localStorage.removeItem("choix");
+
   return (
     <section className="footer">
       <div className="separator">{}</div>
       <div className="footer-img">
-        <Link to="/onboard">
+        <Link to="/onboard" onClick={handleClickOnboard}>
           <img
             src="../src/assets/images/onboarding.svg"
             alt="Go to Onboarding"
