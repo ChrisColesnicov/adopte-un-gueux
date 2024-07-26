@@ -25,6 +25,19 @@ export default function Carousel() {
         return userName.includes(user.Nom);
       }
       if (userChoices.length > 1) {
+        if (userChoices.includes("Mariage forcé")) {
+          if (userChoices.includes(user.Sexe)) {
+            return user.Age <= 18 && userChoices.includes(user.Sexe);
+          }
+          if (userChoices.includes(user.ClasseSociale)) {
+            return user.Age <= 18 && userChoices.includes(user.ClasseSociale);
+          }
+          return (
+            user.Age <= 18 &&
+            userChoices.includes(user.Sexe) &&
+            userChoices.includes(user.ClasseSociale)
+          );
+        }
         return (
           userChoices.includes(user.Sexe) &&
           userChoices.includes(user.ClasseSociale)

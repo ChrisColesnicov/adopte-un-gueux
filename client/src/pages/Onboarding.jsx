@@ -133,6 +133,7 @@ export default function Onboarding() {
                 className="checkbox"
                 type="checkbox"
                 name="Mariage forcé"
+                onChange={handleCheckChange}
               />{" "}
               Mariage forcé
             </label>
