@@ -34,7 +34,11 @@ export default function CartItem({ profile }) {
           <p>{profile.Nom}</p>
         </div>
       </div>
-      <button type="button" className="reject-button-cart" onClick={() => addCart()}>
+      <button
+        type="button"
+        className="reject-button-cart"
+        onClick={() => addCart()}
+      >
         <img src="../src/assets/images/next.svg" alt="next profile" />
       </button>
     </div>

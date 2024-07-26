@@ -2,6 +2,11 @@
   padding: 1rem;
 }
 
+.cartSection {
+  height: 65vh;
+  overflow-y: scroll;
+}
+
 .cart-item-profile-container {
   display: flex;
   align-items: center;
@@ -19,7 +24,8 @@
   gap: 0 1rem;
   margin: 0 1rem;
   padding-right: 1rem;
-  background-color: var(--yellow);
+  background: linear-gradient(180deg, #ffa38d, #fe688b, #fe688b);
+  /* background-color: var(--yellow); */
   border-radius: 8px;
   width: 100%;
 }

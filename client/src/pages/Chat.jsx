@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import Footer from "../components/Footer";
@@ -14,6 +14,7 @@ export default function Chat() {
   const [messages, setMessages] = useState([]);
 
   const dataFromLoader = useLoaderData();
+  const navigate = useNavigate();
 
   const parse = () =>
     Papa.parse(dataFromLoader.data, {
@@ -21,7 +22,6 @@ export default function Chat() {
       complete: (result) => result,
     });
   const { data } = parse();
-  console.info(data);
 
   const getInputText = (event) => {
     setInput(event.target.value);
@@ -29,10 +29,21 @@ export default function Chat() {
 
   const [chatIndex, setChatIndex] = useState(0);
 
+  const handleClickNavigate = () => {
+    navigate("/");
+  };
+
   return (
     <>
       <section className="chat-caroussel">
         <div className="active-chat">
+          <button
+            type="button"
+            className="btn-Back"
+            onClick={handleClickNavigate}
+          >
+            <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+          </button>
           <Splide
             className="carrousel-content"
             options={{
