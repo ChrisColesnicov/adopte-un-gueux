@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@harmonia/server/public/assets/images/logo.svg";
 import "../styles/navbar.css";
 
 export default function Navbar() {
@@ -12,7 +13,7 @@ export default function Navbar() {
         </h2>
         <Link to="/">
           <img
-            src="../src/assets/images/logo.svg"
+            src={logo}
             className="logo"
             alt="Logo - Adopte Un Gueux"
           />
