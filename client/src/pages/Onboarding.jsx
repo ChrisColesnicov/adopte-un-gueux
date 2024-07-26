@@ -34,7 +34,7 @@ export default function Onboarding() {
 
   const handleClickNavigate = () => {
     localStorage.setItem("userName", title);
-    navigate("/");
+    navigate("/Acceuil");
   };
 
   return (

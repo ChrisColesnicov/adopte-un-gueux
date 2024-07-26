@@ -20,12 +20,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Accueil />,
-        loader: getProfil,
+        element: <Onboarding />,
       },
       {
-        path: "/onboard",
-        element: <Onboarding />,
+        path: "/Acceuil",
+        element: <Accueil />,
+        loader: getProfil,
       },
       {
         path: "/:id",

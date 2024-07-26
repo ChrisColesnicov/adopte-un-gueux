@@ -30,7 +30,7 @@ export default function Chat() {
   const [chatIndex, setChatIndex] = useState(0);
 
   const handleClickNavigate = () => {
-    navigate("/");
+    navigate("/Acceuil");
   };
 
   return (

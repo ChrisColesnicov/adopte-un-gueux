@@ -13,7 +13,7 @@ export default function Footer() {
     <section className="footer">
       <div className="separator">{}</div>
       <div className="footer-img">
-        <Link to="/onboard" onClick={handleClickOnboard}>
+        <Link to="/" onClick={handleClickOnboard}>
           <img
             src="../src/assets/images/onboarding.svg"
             alt="Go to Onboarding"
