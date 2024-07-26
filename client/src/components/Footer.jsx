@@ -35,7 +35,12 @@ export default function Footer() {
             ""
           )}
         </Link>
-        <img src="../src/assets/images/parameters.svg" alt="Go to parameters" />
+        <Link to="/settings" className="Settings-link">
+          <img
+            src="../src/assets/images/parameters.svg"
+            alt="Go to parameters"
+          />
+        </Link>
       </div>
     </section>
   );
