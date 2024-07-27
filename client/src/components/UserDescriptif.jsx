@@ -1,6 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
+import backarrow from "@harmonia/server/public/assets/images/backArrow.png";
+import like from "@harmonia/server/public/assets/images/like.svg";
+import superlike from "@harmonia/server/public/assets/images/superlike.png";
 
 import Papa from "papaparse";
 import "../styles/userDescriptif.css";
@@ -38,16 +41,16 @@ export default function UserDescriptif() {
             className="btnBack"
             onClick={handleClickNavigate}
           >
-            <img src="../src/assets/images/backArrow.png" alt="fleche retour" />
+            <img src={backarrow} alt="fleche retour" />
           </button>
           <div className="headBtnImg">
             <div className="btnDescript">
               <button type="button" className="like-button">
-                <img src="../src/assets/images/like.svg" alt="next profile" />
+                <img src={like} alt="next profile" />
               </button>
               <button type="button" className="buy-button">
                 <img
-                  src="../src/assets/images/superlike.png"
+                  src={superlike}
                   alt="next profile"
                 />
               </button>
